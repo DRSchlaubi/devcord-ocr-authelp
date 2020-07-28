@@ -1,0 +1,11 @@
+version: '3'
+services:
+  cloud:
+    build: .
+    volumes:
+      - ./ServiceAccountKey.json:/usr/app/ServiceAccountKey.json
+      - ./logs:/usr/app/logs
+    ports:
+      - 127.0.0.1:8080:8080
+    env_file:
+      - .env
